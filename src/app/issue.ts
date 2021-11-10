@@ -5,5 +5,5 @@ export interface Issue {
     priority: 'low' | 'high';
     type: 'Feature' | 'Bug' | 'Documentation';
     completed?: Date;
-  }
 }
+
