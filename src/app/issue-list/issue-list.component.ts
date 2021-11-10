@@ -8,6 +8,9 @@ import { IssuesService } from '../issues.service';
   styleUrls: ['./issue-list.component.css']
 })
 export class IssueListComponent implements OnInit {
+
+  showReportIssue = false;
+
   issues: Issue[] = [];
 
   constructor( private issueService: IssuesService) { }
@@ -18,5 +21,10 @@ export class IssueListComponent implements OnInit {
 
   private getIssues() {
     this.issues = this.issueService.getPendingIssues();
+  }
+
+  onCloseReport() {
+    this.showReportIssue = false;
+    this.getIssues();
   }
 }

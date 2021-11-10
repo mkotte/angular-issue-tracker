@@ -1,4 +1,6 @@
-<clr-datagrid>
+<ng-container *ngIf="showReportIssue === false">
+  <button class="but btn-rpimary" (click)="showReportIssue = true">Add New Issue</button>
+  <clr-datagrid>
     <clr-dg-column [clrDgField]="'issueNo'" [clrDgColType]="'number'">Issue No</clr-dg-column>
     <clr-dg-column [clrDgField]="'type'">Type</clr-dg-column>
     <clr-dg-column [clrDgField]="'title'">Title</clr-dg-column>
@@ -17,3 +19,5 @@
 
     <clr-dg-footer>{{issues.length}} issues</clr-dg-footer>
   </clr-datagrid>
+</ng-container>
+<app-issue-report *ngIf="showReportIssue == true" (formClose)="onCloseReport()"></app-issue-report>
